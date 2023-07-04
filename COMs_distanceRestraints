@@ -1,0 +1,6 @@
+BEGIN_PLUMED_FILE working DATADIR=
+up_domain_com: COM ATOMS=1-5022,7714-12733,15425-20444
+down_domain_com: COM ATOMS=5023-7713,12734-15424,20445-23135
+dist_com: DISTANCE COMPONENTS ATOMS=up_domain_com,down_domain_com
+RESTRAINT ARG=dist_com.z,dist_com.y AT=0.0,0.0 KAPPA=1000.0,1000.0
+PRINT ARG=dist_com.z,dist_com.y FILE=out.out STRIDE=1000
